@@ -1,0 +1,281 @@
+﻿<Page
+    x:Class="Ultimate_tic_tac_toe.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Ultimate_tic_tac_toe"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Width="750" Height="850" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+
+    <Grid Background="DarkGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="turnText" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="X's turn" TextWrapping="Wrap" Margin="0,40,350,0" FontSize="22" />
+        <TextBlock x:Name="locationText" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="X may select any move" TextWrapping="Wrap" Margin="200,40,0,0" FontSize="22" />
+
+        <Grid Name="mainGrid" Grid.Row="1" Grid.Column="0" Background="Black" Width="700" Height="700" Margin="25,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- Create grids within each of the main grid's cells -->
+
+            <!-- Top Left Mini Game Grid -->
+            <Grid Name="MB0" Grid.Row="0" Grid.Column="0" Margin="19,18,5,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Button x:Name="Btn000" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Height="70" Width="70" Margin="0,0,2,2" />
+                <Button x:Name="Btn001" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,0,0,2" />
+                <Button x:Name="Btn002" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="2,0,0,2" />
+
+                <Button x:Name="Btn010" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,0,2,0" />
+                <Button x:Name="Btn011" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" />
+                <Button x:Name="Btn012" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="2,0,0,0" />
+
+                <Button x:Name="Btn020" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,2,2,0" />
+                <Button x:Name="Btn021" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,2,0,0" />
+                <Button x:Name="Btn022" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="2,2,0,0" />
+            </Grid>
+
+            <!-- Top Middle Mini Game Grid -->
+            <Grid Name="MB1" Grid.Row="0" Grid.Column="1" Margin="5,18,5,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Button x:Name="Btn100" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  BorderBrush="Black" Click="Btn_Click" BorderThickness="0" Height="70" Width="70" Margin="0,0,2,2" />
+                <Button x:Name="Btn101" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  BorderBrush="Black" Click="Btn_Click" BorderThickness="0" Width="70" Height="70" Margin="0,0,0,2" />
+                <Button x:Name="Btn102" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  BorderBrush="Black" Click="Btn_Click" BorderThickness="0" Width="70" Height="70" Margin="2,0,0,2" />
+
+                <Button x:Name="Btn110" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  BorderBrush="Black" Click="Btn_Click" Width="70" Height="70" BorderThickness="0" Margin="0,0,2,0" />
+                <Button x:Name="Btn111" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  BorderBrush="Black" Click="Btn_Click" Width="70" Height="70" BorderThickness="0" />
+                <Button x:Name="Btn112" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  BorderBrush="Black" Click="Btn_Click" Width="70" Height="70" BorderThickness="0" Margin="2,0,0,0" />
+
+                <Button x:Name="Btn120" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  BorderBrush="Black" Click="Btn_Click" Width="70" Height="70" BorderThickness="0" Margin="0,2,2,0" />
+                <Button x:Name="Btn121" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  BorderBrush="Black" Click="Btn_Click" Width="70" Height="70" BorderThickness="0" Margin="0,2,0,0" />
+                <Button x:Name="Btn122" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  BorderBrush="Black" Click="Btn_Click" Width="70" Height="70" BorderThickness="0" Margin="2,2,0,0" />
+            </Grid>
+
+            <!-- Top Right Mini Game Grid -->
+            <Grid Name="MB2" Grid.Row="0" Grid.Column="2" Margin="5,18,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Button x:Name="Btn200" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  BorderBrush="Black" Click="Btn_Click" BorderThickness="0" Height="70" Width="70" Margin="0,0,2,2" />
+                <Button x:Name="Btn201" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  BorderBrush="Black" Click="Btn_Click" BorderThickness="0" Width="70" Height="70" Margin="0,0,0,2" />
+                <Button x:Name="Btn202" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  BorderBrush="Black" Click="Btn_Click" BorderThickness="0" Width="70" Height="70" Margin="2,0,0,2" />
+
+                <Button x:Name="Btn210" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  BorderBrush="Black" Click="Btn_Click" Width="70" Height="70" BorderThickness="0" Margin="0,0,2,0" />
+                <Button x:Name="Btn211" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  BorderBrush="Black" Click="Btn_Click" Width="70" Height="70" BorderThickness="0" />
+                <Button x:Name="Btn212" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  BorderBrush="Black" Click="Btn_Click" Width="70" Height="70" BorderThickness="0" Margin="2,0,0,0" />
+
+                <Button x:Name="Btn220" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  BorderBrush="Black" Click="Btn_Click" Width="70" Height="70" BorderThickness="0" Margin="0,2,2,0" />
+                <Button x:Name="Btn221" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  BorderBrush="Black" Click="Btn_Click" Width="70" Height="70" BorderThickness="0" Margin="0,2,0,0" />
+                <Button x:Name="Btn222" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  BorderBrush="Black" Click="Btn_Click" Width="70" Height="70" BorderThickness="0" Margin="2,2,0,0" />
+            </Grid>
+
+            <!-- ******************************************************************************* -->
+            <!-- Middle Left Mini Game Grid -->
+            <Grid Name="MB3" Grid.Row="1" Grid.Column="0" Margin="19,5,5,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Button x:Name="Btn300" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Height="70" Width="70" Margin="0,0,2,2" />
+                <Button x:Name="Btn301" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,0,0,2" />
+                <Button x:Name="Btn302" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="2,0,0,2" />
+
+                <Button x:Name="Btn310" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,0,2,0" />
+                <Button x:Name="Btn311" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" />
+                <Button x:Name="Btn312" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="2,0,0,0" />
+
+                <Button x:Name="Btn320" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,2,2,0" />
+                <Button x:Name="Btn321" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,2,0,0" />
+                <Button x:Name="Btn322" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="2,2,0,0" />
+            </Grid>
+
+            <!-- Middle Middle Mini Game Grid -->
+            <Grid Name="MB4" Grid.Row="1" Grid.Column="1" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Button x:Name="Btn400" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Height="70" Width="70" Margin="0,0,2,2" />
+                <Button x:Name="Btn401" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,0,0,2" />
+                <Button x:Name="Btn402" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="2,0,0,2" />
+
+                <Button x:Name="Btn410" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,0,2,0" />
+                <Button x:Name="Btn411" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" />
+                <Button x:Name="Btn412" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="2,0,0,0" />
+
+                <Button x:Name="Btn420" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,2,2,0" />
+                <Button x:Name="Btn421" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,2,0,0" />
+                <Button x:Name="Btn422" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="2,2,0,0" />
+            </Grid>
+
+            <!-- Middle Right Mini Game Grid -->
+            <Grid Name="MB5" Grid.Row="1" Grid.Column="2" Margin="5,5,0,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Button x:Name="Btn500" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Height="70" Width="70" Margin="0,0,2,2" />
+                <Button x:Name="Btn501" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,0,0,2" />
+                <Button x:Name="Btn502" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="2,0,0,2" />
+
+                <Button x:Name="Btn510" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,0,2,0" />
+                <Button x:Name="Btn511" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" />
+                <Button x:Name="Btn512" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="2,0,0,0" />
+
+                <Button x:Name="Btn520" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,2,2,0" />
+                <Button x:Name="Btn521" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,2,0,0" />
+                <Button x:Name="Btn522" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="2,2,0,0" />
+            </Grid>
+
+            <!-- ****************************************************** -->
+            <!-- Bottom Left Mini Game Grid -->
+            <Grid Name="MB6" Grid.Row="2" Grid.Column="0" Margin="19,5,5,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Button x:Name="Btn600" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Height="70" Width="70" Margin="0,0,2,2" />
+                <Button x:Name="Btn601" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,0,0,2" />
+                <Button x:Name="Btn602" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="2,0,0,2" />
+
+                <Button x:Name="Btn610" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,0,2,0" />
+                <Button x:Name="Btn611" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" />
+                <Button x:Name="Btn612" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="2,0,0,0" />
+
+                <Button x:Name="Btn620" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,2,2,0" />
+                <Button x:Name="Btn621" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,2,0,0" />
+                <Button x:Name="Btn622" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="2,2,0,0" />
+            </Grid>
+
+            <!-- Bottom Middle Mini Game Grid -->
+            <Grid Name="MB7" Grid.Row="2" Grid.Column="1" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Button x:Name="Btn700" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Height="70" Width="70" Margin="0,0,2,2" />
+                <Button x:Name="Btn701" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,0,0,2" />
+                <Button x:Name="Btn702" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="2,0,0,2" />
+
+                <Button x:Name="Btn710" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,0,2,0" />
+                <Button x:Name="Btn711" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" />
+                <Button x:Name="Btn712" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="2,0,0,0" />
+
+                <Button x:Name="Btn720" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,2,2,0" />
+                <Button x:Name="Btn721" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,2,0,0" />
+                <Button x:Name="Btn722" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="2,2,0,0" />
+            </Grid>
+
+            <!-- Bottom Right Mini Game Grid -->
+            <Grid Name="MB8" Grid.Row="2" Grid.Column="2" Margin="5,5,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Button x:Name="Btn800" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Height="70" Width="70" Margin="0,0,2,2" />
+                <Button x:Name="Btn801" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,0,0,2" />
+                <Button x:Name="Btn802" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="2,0,0,2" />
+
+                <Button x:Name="Btn810" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,0,2,0" />
+                <Button x:Name="Btn811" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" />
+                <Button x:Name="Btn812" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="2,0,0,0" />
+
+                <Button x:Name="Btn820" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,2,2,0" />
+                <Button x:Name="Btn821" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="0,2,0,0" />
+                <Button x:Name="Btn822" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Btn_Click" Width="70" Height="70" Margin="2,2,0,0" />
+            </Grid>
+        </Grid>
+    </Grid>
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Icon="Play" Label="New Game" Click="NewGame_clicked" />
+            <AppBarButton Icon="Setting" Label="About" Click="About_clicked" />
+            <AppBarButton Icon="Cancel" Label="Exit" Click="Exit_clicked" />
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
