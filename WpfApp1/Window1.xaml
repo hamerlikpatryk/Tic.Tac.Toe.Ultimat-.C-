@@ -1,0 +1,13 @@
+﻿<Window x:Class="WpfApp1.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Intro" Height="300" Width="300">
+    <Grid>
+        <Label Content="Welcome to Tic-Tac-Toe&#xD;&#xA;&#xD;&#xA;Click to start New Game" HorizontalAlignment="Left" VerticalAlignment="Top" Height="189" Width="254" Margin="20,27,0,0"/>
+
+    </Grid>
+</Window>
